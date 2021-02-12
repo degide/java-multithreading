@@ -1,5 +1,9 @@
 package com.multithreading;
 
+/**
+ *
+ */
+
 
 /**
  * Testing multithreading
@@ -9,12 +13,19 @@ package com.multithreading;
 public class Main {
 
     public static void main(String[] args) {
-        ExtendThread thread = null;
 
-        thread = new ExtendThread(20, "A");
-        thread.start();
+        //by extending thread
+        //ExtendThread thread = null;
+        //thread = new ExtendThread(20, "A");
+        //thread.start();
+        //thread = new ExtendThread(16, "B");
+        //thread.start();
 
-        thread = new ExtendThread(16, "B");
-        thread.start();
+        //by implementing runnable
+        ImplementRunnable runnableThread = new ImplementRunnable(5, "A");
+        runnableThread.start();
+        runnableThread = new ImplementRunnable(4, "B");
+        runnableThread.start();
+
     }
 }

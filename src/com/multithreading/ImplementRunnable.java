@@ -1,21 +1,21 @@
 package com.multithreading;
 
 /**
- * Multithreading by Extending Thread class
+ * Multi-threading by implementing <b>Runnable Interface</b>
  * @author Harerimana Egide
- * @since 2021-02-11
+ * @since 2021-02-12
  */
-public class ExtendThread extends Thread {
+public class ImplementRunnable implements Runnable{
 
     public int num;
     public String threadName;
 
     /**
-     * Constructor of ExtendThread class
+     * Constructor of ImplementThread class
      * @param number the counter number
      * @param thread_name the name to help us differentiate threads
      */
-    public ExtendThread(int number, String thread_name){
+    public ImplementRunnable(int number, String thread_name){
         this.num = number;
         this.threadName = thread_name;
     }
@@ -29,19 +29,16 @@ public class ExtendThread extends Thread {
     }
 
     /**
-     * Testing encapsulation: <b>Do something before start by overriding start()</b>
-     * <br/><br/>COMMENT IF NOT NEEDED!
+     * Here we need to add start method as Runnable interface doesn't
+     * have a start method. <b>Here ImplementRunnable class is passed to Thread class</b>
      */
-    @Override
     public void start(){
         Thread th = null;
-        System.out.println("Testing encapsulation");
         if(th==null){
             th = new Thread(this, "Test");
             th.start();
         }
     }
-    /**End*/
 
     @Override
     public void run() {
@@ -49,4 +46,5 @@ public class ExtendThread extends Thread {
             System.out.println("Thread: "+getThreadName()+", i: "+i);
         }
     }
+
 }
