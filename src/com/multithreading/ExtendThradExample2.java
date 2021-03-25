@@ -13,6 +13,11 @@ public class ExtendThradExample2 extends Thread{
     public void run() {
         for(int i=0; i<this.num; i++){
             System.out.println("From Thread "+this.getThread_name()+": "+i);
+            try {
+                sleep(500);
+            } catch (InterruptedException e) {
+                e.getMessage();
+            }
         }
     }
 

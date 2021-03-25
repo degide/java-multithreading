@@ -21,10 +21,15 @@ public class Main {
         */
 
         /* By implementing runnable */
-        ImplementRunnable runnableThread = new ImplementRunnable(5, "A");
-        runnableThread.start();
-        runnableThread = new ImplementRunnable(4, "B");
-        runnableThread.start();
+        //ImplementRunnable runnableThread = new ImplementRunnable(5, "A");
+        //runnableThread.start();
+        //runnableThread = new ImplementRunnable(4, "B");
+        //runnableThread.start();
 
+        ExtendThradExample2 thread1 = null;
+        thread1 = new ExtendThradExample2("A", 4);
+        thread1.start();
+        thread1 = new ExtendThradExample2("B", 6);
+        thread1.start();
     }
 }
